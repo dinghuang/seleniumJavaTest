@@ -12,6 +12,16 @@ public class SeleniumConfigure {
 
     private String baseUrl;
 
+    private String driverPath;
+
+    public String getDriverPath() {
+        return driverPath;
+    }
+
+    public void setDriverPath(String driverPath) {
+        this.driverPath = driverPath;
+    }
+
     public String getBrowser() {
         return browser;
     }

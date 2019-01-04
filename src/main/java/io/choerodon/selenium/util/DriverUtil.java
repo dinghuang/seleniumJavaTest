@@ -44,14 +44,18 @@ public class DriverUtil {
             } else {
                 String path;
                 if (browser.equals(Browser.CHROME.value())) {
-                    if (OSinfoUtil.getOSname().equals(EPlatform.Linux.value())) {
-                        path = DriverUtil.class.getClassLoader().getResource("chromedriverLinux").getPath();
-                    } else if (OSinfoUtil.getOSname().equals(EPlatform.Mac_OS_X.value())) {
-                        path = DriverUtil.class.getClassLoader().getResource("chromedriver").getPath();
-                    } else if (OSinfoUtil.getOSname().equals(EPlatform.Windows.value())) {
-                        path = DriverUtil.class.getClassLoader().getResource("chromedriver.exe").getPath();
+                    if (seleniumConfigure.getDriverPath() != null) {
+                        path = seleniumConfigure.getDriverPath();
                     } else {
-                        throw new IllegalArgumentException("Platform not support");
+                        if (OSinfoUtil.getOSname().equals(EPlatform.Linux.value())) {
+                            path = DriverUtil.class.getClassLoader().getResource("chromedriverLinux").getPath();
+                        } else if (OSinfoUtil.getOSname().equals(EPlatform.Mac_OS_X.value())) {
+                            path = DriverUtil.class.getClassLoader().getResource("chromedriver").getPath();
+                        } else if (OSinfoUtil.getOSname().equals(EPlatform.Windows.value())) {
+                            path = DriverUtil.class.getClassLoader().getResource("chromedriver.exe").getPath();
+                        } else {
+                            throw new IllegalArgumentException("Platform not support");
+                        }
                     }
                     System.setProperty("webdriver.chrome.driver", path);
                     webDriver = new ChromeDriver();

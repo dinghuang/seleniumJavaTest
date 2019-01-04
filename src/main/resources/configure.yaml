@@ -1,2 +1,3 @@
 browser: Chrome #FireFox、Edge、IE、Safari、Chrome
 baseUrl: https://www.google.com.hk/
+driverPath: /Users/dinghuang/Documents/workSpace/github/selenium/src/main/resources/chromedriver #为空的话会自动识别
