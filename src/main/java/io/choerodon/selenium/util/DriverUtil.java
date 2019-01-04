@@ -73,7 +73,7 @@ public class DriverUtil {
                     }
                 } else if (browser.equals(Browser.FIRE_FOX.value())) {
                     if (seleniumConfigure.getRemoteDriverUrl() != null) {
-                        handleRemoteDriverUrl(seleniumConfigure.getRemoteDriverUrl(), new FirefoxOptions().addPreference("browser.startup.page", 1));
+                        handleRemoteDriverUrl(seleniumConfigure.getRemoteDriverUrl(), new FirefoxOptions());
                     } else {
                         webDriver = new FirefoxDriver();
                     }
