@@ -37,7 +37,7 @@ public class SearchGoogleTest {
     @After
     public void tearDown() {
         //如果关闭了，后面的测试会报错，除非驱动不用单例模式
-        //driver.quit();
+//        driver.quit();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);

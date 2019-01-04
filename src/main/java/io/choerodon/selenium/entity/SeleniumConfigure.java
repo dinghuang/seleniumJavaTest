@@ -12,14 +12,24 @@ public class SeleniumConfigure {
 
     private String baseUrl;
 
-    private String driverPath;
+    private String localDriverPath;
 
-    public String getDriverPath() {
-        return driverPath;
+    private String remoteDriverUrl;
+
+    public String getLocalDriverPath() {
+        return localDriverPath;
     }
 
-    public void setDriverPath(String driverPath) {
-        this.driverPath = driverPath;
+    public void setLocalDriverPath(String localDriverPath) {
+        this.localDriverPath = localDriverPath;
+    }
+
+    public String getRemoteDriverUrl() {
+        return remoteDriverUrl;
+    }
+
+    public void setRemoteDriverUrl(String remoteDriverUrl) {
+        this.remoteDriverUrl = remoteDriverUrl;
     }
 
     public String getBrowser() {
@@ -40,9 +50,11 @@ public class SeleniumConfigure {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("SeleniumConfigure{");
+        final StringBuilder sb = new StringBuilder("SeleniumConfigure{");
         sb.append("browser='").append(browser).append('\'');
         sb.append(", baseUrl='").append(baseUrl).append('\'');
+        sb.append(", localDriverPath='").append(localDriverPath).append('\'');
+        sb.append(", remoteDriverUrl='").append(remoteDriverUrl).append('\'');
         sb.append('}');
         return sb.toString();
     }

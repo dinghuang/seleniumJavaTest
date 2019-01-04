@@ -9,7 +9,6 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * @author dinghuang123@gmail.com
@@ -32,10 +31,10 @@ public class SearchBaiduTest {
     @Test
     public void testSearchBaidu() {
         driver.get("https://www.baidu.com/");
-        driver.findElement(By.id("kw")).click();
-        driver.findElement(By.id("kw")).clear();
-        driver.findElement(By.id("kw")).sendKeys("baidu");
-        driver.findElement(By.id("kw")).sendKeys(Keys.ENTER);
+//        driver.findElement(By.id("kw")).click();
+//        driver.findElement(By.id("kw")).clear();
+//        driver.findElement(By.id("kw")).sendKeys("baidu");
+//        driver.findElement(By.id("kw")).sendKeys(Keys.ENTER);
     }
 
     @After

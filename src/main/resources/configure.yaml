@@ -1,3 +1,10 @@
 browser: Chrome #FireFox、Edge、IE、Safari、Chrome
 baseUrl: https://www.google.com.hk/
-driverPath: /Users/dinghuang/Documents/workSpace/github/selenium/src/main/resources/chromedriver #为空的话会自动识别
+localDriverPath: /Users/dinghuang/Documents/workSpace/github/selenium/src/main/resources/chromedriver #为空的话会自动识别本地的驱动
+remoteDriverUrl: http://localhost:4444/wd/hub
+#使用远程的驱动服务来测试，目前只支持Chrome和FireFox，本地如果要起服务，请在docker中执行下面的命令启动服务
+#docker pull elgalu/selenium
+#docker run -d --name=grid -p 4444:24444 -p 5900:25900  -e TZ="Asia/Shanghai" -e MAX_INSTANCES=20 -e MAX_SESSIONS=20  -v /Users/dinghuang/Documents/Tool/selenium/shm:/dev/shm --privileged elgalu/selenium
+#关闭服务命令：
+#docker exec grid stop
+#docker stop grid
